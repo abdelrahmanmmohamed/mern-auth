@@ -2,12 +2,12 @@ import { useState } from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 
 export default function SignUp() {
-  const [formData,setFormdata] = useState({});
+  const [formData,setFormData] = useState({});
   const [error,setError] = useState(false);
   const [loading,setLoading] = useState(false);
   const navigate =useNavigate();
-  const handlechange = (e) =>{
-    setFormdata({...formData,[e.target.id]:e.target.
+  const handleChange = (e) =>{
+    setFormData({...formData,[e.target.id]:e.target.
       value});
   }
   const handleSubmit = async (e) =>{
@@ -43,12 +43,12 @@ export default function SignUp() {
      Sign Up
     </h1>
     <form onSubmit={handleSubmit} className='flex flex-col gap-4'> 
-      <input type="text" placeholder='Username' id='username' className='bg-slate-100 p-3 rounded-lg' onChange={handlechange}/>
-      <input type="email" placeholder='Email' id='email' className='bg-slate-100 p-3 rounded-lg' onChange={handlechange}/>
-      <input type="password" placeholder='Password' id='password' className='bg-slate-100 p-3 rounded-lg' onChange={handlechange}/>
+      <input type="text" placeholder='Username' id='username' className='bg-slate-100 p-3 rounded-lg' onChange={handleChange}/>
+      <input type="email" placeholder='Email' id='email' className='bg-slate-100 p-3 rounded-lg' onChange={handleChange}/>
+      <input type="password" placeholder='Password' id='password' className='bg-slate-100 p-3 rounded-lg' onChange={handleChange}/>
 
       <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-        {loading ? 'Loading' : 'Sign Up'}
+        {loading ? 'Loading...' : 'Sign Up'}
         </button>
     </form>
     <div className='flex gap-2 mt-5'>
